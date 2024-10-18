@@ -14,8 +14,13 @@ const mongoURI = process.env.MONGODB_URI;
 
 mongoose
   .connect(mongoURI)
-  .then(() => console.log('mongoose connected'))
-  .catch((error) => console.log('DB connection fail', error));
+  .then(() => {
+    console.log('mongoose connected');
+  })
+  .catch((error) => {
+    console.error('DB connection fail:', error.message);
+    process.exit(1);
+  });
 
 app.listen(5000, () => {
   console.log('Server listen at 5000');
