@@ -17,6 +17,6 @@ mongoose
   .then(() => console.log('mongoose connected'))
   .catch((error) => console.log('DB connection fail', error));
 
-app.listen(80, () => {
-  console.log('Server listen at 80');
+app.listen(5000, () => {
+  console.log('Server listen at 5000');
 });
